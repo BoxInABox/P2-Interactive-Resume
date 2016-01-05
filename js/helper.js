@@ -1,17 +1,9 @@
 /*
 
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
+This file contains all of the code running in the background that makes resumeBuilder.js possible. Called helper functions because they support code in resume.
 
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
 */
 
-
-/*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
-*/
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 
@@ -59,19 +51,25 @@ var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 
-/*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
+function inName(name){
+  name = name.trim().split(" ");
+  console.log("name", name);
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0,1).toUpperCase() +
+            name[0].slice(1).toLowerCase();
+  console.log("name", name);
+  return name[0] + " " + name[1];
+}
+
 $(document).ready(function() {
   $('button').click(function() {
-    var iName = inName() || function(){};
+    var iName = inName($('#name').text()) || function(){};
     $('#name').html(iName);
   });
 });
 
 
-// loc is a jQuery event object that contains info
-// about the click event
+// loc is a jQuery event object that contains info about the click event
 
 clickLocations = [];
 
@@ -95,40 +93,26 @@ $(document).click(function(loc) {
 
 
 /*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
+Custom Google Map:
 https://developers.google.com/maps/documentation/javascript/reference
 */
 var map;    // declares a global map variable
 
-
-/*
-Start here! initializeMap() is called when page is loaded.
-*/
+// InitializeMap() is called when page is loaded.
 function initializeMap() {
-
   var locations;
-
   var mapOptions = {
     disableDefaultUI: true
   };
 
-  /*
-  For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js.
-  */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
 
   /*
   locationFinder() returns an array of every location string from the JSONs
   written for bio, education, and work.
   */
   function locationFinder() {
-
-    // initializes an empty array
     var locations = [];
-
     // adds the single location property from bio to the locations array
     locations.push(bio.contacts.location);
 
@@ -174,13 +158,14 @@ function initializeMap() {
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
     // about a location.
+    // https://developers.google.com/maps/documentation/javascript/infowindows
     var infoWindow = new google.maps.InfoWindow({
       content: name
     });
 
-    // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+        infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -237,16 +222,12 @@ function initializeMap() {
 
 }
 
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
-
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
-  //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+window.addEventListener('resize', function(e) {
+  // Make sure the map bounds get updated on page resize
+ map.fitBounds(mapBounds);
+});
