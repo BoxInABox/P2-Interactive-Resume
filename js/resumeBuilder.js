@@ -98,6 +98,7 @@ bio.display = function(){
       myContact += HTMLgithub.replace("%data%", obj.github);
       myContact += HTMLlocation.replace("%data%", obj.location);
   $("#topContacts").append(myContact);
+  $("#footerContacts").append(myContact);
   var picWelcome = HTMLbioPic.replace("%data%", bio.bioPic) +
                    HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
   $("#header").append(picWelcome);
@@ -112,17 +113,6 @@ bio.display = function(){
 };
 
 education.display = function(){
-  for(school in education.onlineCourses){
-    var obj = education.onlineCourses;
-    if (obj.hasOwnProperty(school)) {
-          var myCourse = HTMLonlineClasses + HTMLonlineTitle.replace("%data%", obj[school].title);
-              myCourse += HTMLonlineSchool.replace("%data%", obj[school].school);
-              myCourse += HTMLonlineDates.replace("%data%", obj[school].date);
-              myCourse += HTMLonlineURL.replace("%data%", obj[school].url);
-          $(".education-entry:last").append(myCourse);
-    }
-  }
-
   for(school in education.schools){
     var obj = education.schools;
     if (obj.hasOwnProperty(school)) {
@@ -133,6 +123,17 @@ education.display = function(){
               myDegree += HTMLschoolLocation.replace("%data%", obj[school].location);
               myDegree += HTMLschoolMajor.replace("%data%", obj[school].majors[0]);
           $(".education-entry:last").append(myDegree);
+    }
+  }
+
+  for(school in education.onlineCourses){
+    var obj = education.onlineCourses;
+    if (obj.hasOwnProperty(school)) {
+          var myCourse = HTMLonlineClasses + HTMLonlineTitle.replace("%data%", obj[school].title);
+              myCourse += HTMLonlineSchool.replace("%data%", obj[school].school);
+              myCourse += HTMLonlineDates.replace("%data%", obj[school].date);
+              myCourse += HTMLonlineURL.replace("%data%", obj[school].url);
+          $(".education-entry:last").append(myCourse);
     }
   }
 };
@@ -146,6 +147,7 @@ work.display = function(){
               myJob += HTMLworkTitle.replace("%data%", obj[job].title);
               myJob += HTMLworkDates.replace("%data%", obj[job].dates);
               myJob += HTMLworkLocation.replace("%data%", obj[job].location);
+              myJob += HTMLworkDescription.replace("%data%", obj[job].description);
           $(".work-entry:last").append(myJob);
     }
   }
@@ -154,7 +156,7 @@ work.display = function(){
 portfolio.display = function(){
   $("#projects").append(HTMLimageViewerStart);
   $("#photo-viewer").after(HTMLimageViewerContainer);
-  // photoviewer here
+/* photoviewer inserted here. Adapted from book "JavaScript & jQuery" by Jon Duckett */
     for(project in portfolio.projects){
     var obj = portfolio.projects;
     if (obj.hasOwnProperty(project)) {
@@ -165,7 +167,6 @@ portfolio.display = function(){
             $("#thumbnails").prepend(myProject);
     }
   }
-
     for(project in portfolio.projects){
     var obj = portfolio.projects;
     if (obj.hasOwnProperty(project)) {
@@ -176,11 +177,7 @@ portfolio.display = function(){
           $(".project-entry:last").append(myProject);
     }
   }
-
-
 };
-
-
 
 
 work.display();

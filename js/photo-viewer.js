@@ -1,3 +1,5 @@
+/* Adapted from book "JavaScript & jQuery" by Jon Duckett */
+
 var request;  // Latest image to be requested.
 var latestTitle;
 var $current; // Image currently being shown.
