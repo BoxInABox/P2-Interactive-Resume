@@ -21,16 +21,22 @@ var work = {
  var portfolio = {
    "projects": [
      {
-      "title": "Random",
-      "dates": "url",
-      "description": "Description",
-      "image": "img/portfolio2_960.jpg"
+      "title": "Random1",
+      "dates": "2015",
+      "description": "Description for my project.",
+      "image": ["img/portfolio1_full.jpg", "img/portfolio1_thumb.jpg"]
     },
     {
-      "title": "Random",
-      "dates": "url",
-      "description": "Description",
-      "image": "img/portfolio2_960.jpg"
+      "title": "Random2",
+      "dates": "2014",
+      "description": "Description for my project.",
+      "image": ["img/portfolio2_full.jpg", "img/portfolio2_thumb.jpg"]
+    },
+    {
+      "title": "Random3",
+      "dates": "2013",
+      "description": "Description for my project.",
+      "image": ["img/portfolio3_full.jpg", "img/portfolio3_thumb.jpg"]
     }
   ]
 };
@@ -39,25 +45,27 @@ var education = {
   "schools": [
     {
       "name": "UCSB",
+      "location": "SB",
       "degree": "BA",
-      "dates": "4",
-      "location": "city",
-      "major": "JS"
+      "majors": ["Communication"],
+      "dates": "2001-2001",
+      "url": "college.com"
     },
     {
       "name": "UCSB",
+      "location": "SB",
       "degree": "BA",
-      "dates": "4",
-      "location": "city",
-      "major": "JS"
+      "majors": ["Communication"],
+      "dates": "2001-2001",
+      "url": "college.com"
     }
   ],
   "onlineCourses": [
     {
       "title": "JS",
-      "school": "placeholder",
-      "dates": "x",
-      "url": "x"
+      "school": "Udacity",
+      "date": "3/2015",
+      "url": "myonlinecourse.com"
     }
   ]
 };
@@ -68,16 +76,15 @@ var bio = {
   "contacts": {
     "mobile": "206-962-0792",
     "email": "audrey@gmail.com",
-    "twitter": "@klammertime",
     "github": "klammertime",
-    "blog": "audreyklammer.com",
+    "twitter": "@klammertime",
     "location": "SF Bay Area"
   },
-    "bioPic": "images/fry.jpg",
-    "welcomeMessage": "hi",
+    "welcomeMessage": "This is my welcome message.",
     "skills": [
-      "JavaScript", "HTML5"
+      "JavaScript", "HTML5", "jQuery", "Responsive Web Design"
     ],
+    "bioPic": "img/audreyKlammer_full.jpg"
 };
 
 bio.display = function(){
@@ -89,28 +96,20 @@ bio.display = function(){
       myContact += HTMLemail.replace("%data%", obj.email);
       myContact += HTMLtwitter.replace("%data%", obj.twitter);
       myContact += HTMLgithub.replace("%data%", obj.github);
-      myContact += HTMLblog.replace("%data%", obj.blog);
       myContact += HTMLlocation.replace("%data%", obj.location);
   $("#topContacts").append(myContact);
   var picWelcome = HTMLbioPic.replace("%data%", bio.bioPic) +
                    HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
   $("#header").append(picWelcome);
-  if(bio["skills"].length) {
+  if(bio.skills.length) {
     $("#header").append(HTMLskillsStart);
-    for(var i = 0; i < bio["skills"].length; i++){
-      var mySkill = HTMLskills.replace("%data%", bio.skills[i]);
-      $("#skills").append(mySkill);
+    var mySkill = "";
+    for(var i = 0; i < bio.skills.length; i++){
+      mySkill += HTMLskills.replace("%data%", bio.skills[i]);
     }
+    $("#skills").append(mySkill);
   }
 };
-
-
-
-
-
-
-
-
 
 education.display = function(){
   for(school in education.onlineCourses){
@@ -118,7 +117,7 @@ education.display = function(){
     if (obj.hasOwnProperty(school)) {
           var myCourse = HTMLonlineClasses + HTMLonlineTitle.replace("%data%", obj[school].title);
               myCourse += HTMLonlineSchool.replace("%data%", obj[school].school);
-              myCourse += HTMLonlineDates.replace("%data%", obj[school].dates);
+              myCourse += HTMLonlineDates.replace("%data%", obj[school].date);
               myCourse += HTMLonlineURL.replace("%data%", obj[school].url);
           $(".education-entry:last").append(myCourse);
     }
@@ -132,7 +131,7 @@ education.display = function(){
               myDegree += HTMLschoolDegree.replace("%data%", obj[school].degree);
               myDegree += HTMLschoolDates.replace("%data%", obj[school].dates);
               myDegree += HTMLschoolLocation.replace("%data%", obj[school].location);
-              myDegree += HTMLschoolMajor.replace("%data%", obj[school].major);
+              myDegree += HTMLschoolMajor.replace("%data%", obj[school].majors[0]);
           $(".education-entry:last").append(myDegree);
     }
   }
@@ -147,26 +146,42 @@ work.display = function(){
               myJob += HTMLworkTitle.replace("%data%", obj[job].title);
               myJob += HTMLworkDates.replace("%data%", obj[job].dates);
               myJob += HTMLworkLocation.replace("%data%", obj[job].location);
-              myJob += HTMLworkDescription.replace("%data%", obj[job].description);
           $(".work-entry:last").append(myJob);
     }
   }
 };
 
-
 portfolio.display = function(){
-  for(project in portfolio.projects){
+  $("#projects").append(HTMLimageViewerStart);
+  $("#photo-viewer").after(HTMLimageViewerContainer);
+  // photoviewer here
+    for(project in portfolio.projects){
+    var obj = portfolio.projects;
+    if (obj.hasOwnProperty(project)) {
+            var myProject = HTMLimageLink.replace("%data%", obj[project].image[0]);
+                myProject += HTMLimageTitle.replace("%data%", obj[project].title);
+                myProject += HTMLimageThumb.replace("%data%", obj[project].image[1]);
+                myProject += HTMLimageThumbAlt.replace("%data%", obj[project].title);
+            $("#thumbnails").prepend(myProject);
+    }
+  }
+
+    for(project in portfolio.projects){
     var obj = portfolio.projects;
     if (obj.hasOwnProperty(project)) {
           $("#projects").append(HTMLprojectStart);
           var myProject = HTMLprojectTitle.replace("%data%", obj[project].title);
               myProject += HTMLprojectDates.replace("%data%", obj[project].dates);
               myProject += HTMLprojectDescription.replace("%data%", obj[project].description);
-              myProject += HTMLprojectImage.replace("%data%", obj[project].image);
           $(".project-entry:last").append(myProject);
     }
   }
+
+
 };
+
+
+
 
 work.display();
 portfolio.display();
@@ -175,4 +190,5 @@ bio.display();
 
 $("#mapDiv").append(googleMap);
 
-$("#main").append(internationalizeButton);
+// $("#main").append(internationalizeButton);
+

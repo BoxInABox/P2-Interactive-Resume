@@ -34,6 +34,14 @@ var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
+// add photoviewer variables here
+var HTMLimageViewerStart = '<div id="photo-viewer" class="flex-box-project-image">';
+var HTMLimageViewerContainer = '<div id="thumbnails"></div>';
+var HTMLimageLink = '<a href="%data%" class="thumb active" ';
+var HTMLimageTitle = 'title="%data%">';
+var HTMLimageThumb = '<img src="%data%" ';
+var HTMLimageThumbAlt = 'alt="%data%" /></a>'
+
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
@@ -231,3 +239,5 @@ window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
  map.fitBounds(mapBounds);
 });
+
+
