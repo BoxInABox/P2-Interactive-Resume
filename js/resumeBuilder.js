@@ -1,4 +1,6 @@
 
+
+
 var work = {
   "jobs": [
     {
@@ -88,23 +90,23 @@ var bio = {
 };
 
 bio.display = function(){
-  var nameTitle = HTMLheaderName.replace("%data%", bio.name) +
+  var obj, nameTitle, myContact, picWelcome, mySkill = "";
+  nameTitle = HTMLheaderName.replace("%data%", bio.name) +
                 HTMLheaderRole.replace("%data%", bio.role);
   $("#header").prepend(nameTitle);
-  var obj = bio.contacts;
-  var myContact = HTMLmobile.replace("%data%", obj.mobile);
+  obj = bio.contacts;
+      myContact = HTMLmobile.replace("%data%", obj.mobile);
       myContact += HTMLemail.replace("%data%", obj.email);
       myContact += HTMLtwitter.replace("%data%", obj.twitter);
       myContact += HTMLgithub.replace("%data%", obj.github);
       myContact += HTMLlocation.replace("%data%", obj.location);
   $("#topContacts").append(myContact);
   $("#footerContacts").append(myContact);
-  var picWelcome = HTMLbioPic.replace("%data%", bio.bioPic) +
+      picWelcome = HTMLbioPic.replace("%data%", bio.bioPic) +
                    HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
   $("#header").append(picWelcome);
   if(bio.skills.length) {
     $("#header").append(HTMLskillsStart);
-    var mySkill = "";
     for(var i = 0; i < bio.skills.length; i++){
       mySkill += HTMLskills.replace("%data%", bio.skills[i]);
     }
@@ -113,11 +115,12 @@ bio.display = function(){
 };
 
 education.display = function(){
-  for(school in education.schools){
-    var obj = education.schools;
+  var obj, myDegree, myCourse;
+  for(var school in education.schools){
+    obj = education.schools;
     if (obj.hasOwnProperty(school)) {
           $("#education").append(HTMLschoolStart);
-          var myDegree = HTMLschoolName.replace("%data%", obj[school].name);
+              myDegree = HTMLschoolName.replace("%data%", obj[school].name);
               myDegree += HTMLschoolDegree.replace("%data%", obj[school].degree);
               myDegree += HTMLschoolDates.replace("%data%", obj[school].dates);
               myDegree += HTMLschoolLocation.replace("%data%", obj[school].location);
@@ -127,9 +130,9 @@ education.display = function(){
   }
 
   for(school in education.onlineCourses){
-    var obj = education.onlineCourses;
+    obj = education.onlineCourses;
     if (obj.hasOwnProperty(school)) {
-          var myCourse = HTMLonlineClasses + HTMLonlineTitle.replace("%data%", obj[school].title);
+              myCourse = HTMLonlineClasses + HTMLonlineTitle.replace("%data%", obj[school].title);
               myCourse += HTMLonlineSchool.replace("%data%", obj[school].school);
               myCourse += HTMLonlineDates.replace("%data%", obj[school].date);
               myCourse += HTMLonlineURL.replace("%data%", obj[school].url);
@@ -139,11 +142,12 @@ education.display = function(){
 };
 
 work.display = function(){
-  for(job in work.jobs){
-    var obj = work.jobs;
+  var obj, myJob;
+  for(var job in work.jobs){
+    obj = work.jobs;
     if (obj.hasOwnProperty(job)) {
           $("#workExperience").append(HTMLworkStart);
-          var myJob = HTMLworkEmployer.replace("%data%", obj[job].employer);
+              myJob = HTMLworkEmployer.replace("%data%", obj[job].employer);
               myJob += HTMLworkTitle.replace("%data%", obj[job].title);
               myJob += HTMLworkDates.replace("%data%", obj[job].dates);
               myJob += HTMLworkLocation.replace("%data%", obj[job].location);
@@ -154,24 +158,25 @@ work.display = function(){
 };
 
 projects.display = function(){
+  var obj, myProject;
   $("#projects").append(HTMLimageViewerStart);
   $("#photo-viewer").after(HTMLimageViewerContainer);
 /* photoviewer inserted here. Adapted from book "JavaScript & jQuery" by Jon Duckett */
-    for(project in projects.projects){
-    var obj = projects.projects;
+  for(var project in projects.projects){
+    obj = projects.projects;
     if (obj.hasOwnProperty(project)) {
-            var myProject = HTMLimageLink.replace("%data%", obj[project].images[0]);
+                myProject = HTMLimageLink.replace("%data%", obj[project].images[0]);
                 myProject += HTMLimageTitle.replace("%data%", obj[project].title);
                 myProject += HTMLimageThumb.replace("%data%", obj[project].images[1]);
                 myProject += HTMLimageThumbAlt.replace("%data%", obj[project].title);
             $("#thumbnails").prepend(myProject);
     }
   }
-    for(project in projects.projects){
-    var obj = projects.projects;
+  for(project in projects.projects){
+    obj = projects.projects;
     if (obj.hasOwnProperty(project)) {
           $("#projects").append(HTMLprojectStart);
-          var myProject = HTMLprojectTitle.replace("%data%", obj[project].title);
+              myProject = HTMLprojectTitle.replace("%data%", obj[project].title);
               myProject += HTMLprojectDates.replace("%data%", obj[project].dates);
               myProject += HTMLprojectDescription.replace("%data%", obj[project].description);
           $(".project-entry:last").append(myProject);
@@ -188,4 +193,3 @@ bio.display();
 $("#mapDiv").append(googleMap);
 
 // $("#main").append(internationalizeButton);
-

@@ -38,7 +38,7 @@ var HTMLimageViewerContainer = '<div id="thumbnails"></div>';
 var HTMLimageLink = '<a href="%data%" class="thumb active" ';
 var HTMLimageTitle = 'title="%data%">';
 var HTMLimageThumb = '<img src="%data%" ';
-var HTMLimageThumbAlt = 'alt="%data%" /></a>'
+var HTMLimageThumbAlt = 'alt="%data%" /></a>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -77,7 +77,7 @@ $(document).ready(function() {
 
 // loc is a jQuery event object that contains info about the click event
 
-clickLocations = [];
+var clickLocations = [];
 
 function logClicks(x,y) {
   clickLocations.push(
@@ -237,5 +237,4 @@ window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
  map.fitBounds(mapBounds);
 });
-
 
