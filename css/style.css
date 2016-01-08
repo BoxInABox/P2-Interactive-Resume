@@ -1,3 +1,17 @@
+/*
+TABLE OF CONTENTS
+
+1. BASE RULES
+2. LAYOUT RULES
+3. MODULE RULES
+4. STATE RULES
+5. THEME RULES
+6. RESPONSIVE RULES
+
+*/
+
+/* 1. BASE RULES */
+
 body,
 div,
 ul,
@@ -14,19 +28,9 @@ h6 {
     font-family: "Roboto", sans-serif;
 }
 
-.clear-fix {
-    overflow: auto;
-}
-
-.education-entry,
-.work-entry,
-.project-entry {
-    padding: 0 5%;
-}
-
 h1 {
     font-size: 40px;
-    color: #f5a623;
+    color: #d97925;
     line-height: 48px;
     display: inline;
 }
@@ -47,33 +51,9 @@ h3 {
     padding: 30px 0 0;
 }
 
-h4 {
-    font-weight: bold;
-    font-size: 14px;
-    color: #4a4a4a;
-    line-height: 17px;
-}
-
 h2,
-h4,
 h5 {
     padding: 10px 5%;
-}
-
-.date-text {
-    font-style: italic;
-    font-size: 14px;
-    color: #999;
-    line-height: 16px;
-    float: left;
-}
-
-.location-text {
-    font-style: italic;
-    font-size: 14px;
-    color: #999;
-    line-height: 16px;
-    float: right;
 }
 
 p {
@@ -83,51 +63,25 @@ p {
 }
 
 a {
-    color: #1199c3;
+    color: #013440;
     text-decoration: none;
     margin-top: 15px;
     display: block;
 }
 
-.welcome-message {
-    font-style: italic;
-    font-size: 18px;
-    color: #f3f3f3;
-    line-height: 28px;
+ul {
+    list-style-type: none;
 }
 
-#skills-h3 {
-    color: #f5ae23;
-    display: none;
+span {
+    padding: 5px;
 }
 
-.orange {
-    background-color: #f5ae23;
+.clear-fix {
+    overflow: auto;
 }
 
-.orange-text {
-    color: #f5ae23;
-}
-
-.white-text {
-    font-weight: bold;
-    color: #fff;
-}
-
-.gray {
-    background-color: #f3f3f3;
-    padding-bottom: 10px;
-    min-height: 200px;
-    clear: both;
-}
-
-.dark-gray {
-    background-color: #4a4a4a;
-}
-
-#header {
-    background-color: #484848;
-}
+/* 2. LAYOUT RULES */
 
 .flex-box {
     display: -webkit-flex;
@@ -147,35 +101,9 @@ a {
     padding: 10px;
 }
 
-.center-content {
-    padding: 2.5% 5%;
-}
-
-ul {
-    list-style-type: none;
-}
-
-.biopic {
-    float: left;
-    padding: 10px;
-    width: 200px;
-    display: none;
-}
-
-span {
-    padding: 5px;
-}
-
-#lets-connect {
-    text-align: center;
-}
+/* 3. MODULE RULES */
 
 /* Photo viewer styles - adapted from book "JavaScript & jQuery" by Jon Duckett */
-
-
-.project-title {
-    order: -2;
-}
 
 #photo-viewer {
     max-height: 400px;
@@ -200,15 +128,97 @@ span {
     padding: 0;
 }
 
-a.active {
-    opacity: 0.3%;
-}
-
 .thumb {
     padding-right: 10px;
 }
 
-/* Media queries to handle various device widths */
+.education-entry,
+.work-entry,
+.project-entry {
+    padding: 0 5%;
+}
+
+.date-text {
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+    float: left;
+}
+
+.location-text {
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+    float: right;
+}
+
+.welcome-message {
+    font-style: italic;
+    font-size: 18px;
+    color: #f3f3f3;
+    line-height: 28px;
+}
+
+#skills-h3 {
+    color: #d97925;
+    display: none;
+}
+
+.biopic {
+    float: left;
+    padding: 10px;
+    width: 200px;
+    display: none;
+}
+
+#lets-connect {
+    text-align: center;
+}
+
+/* 4. THEME RULES */
+
+.center-content {
+    padding: 2.5% 5%;
+}
+
+/*.orange {
+    background-color: #d97925;
+}*/
+
+.orange-text {
+    color: #d97925;
+}
+
+.white-text {
+    font-weight: bold;
+    color: #fff;
+}
+
+.gray {
+    background-color: #f3f3f3;
+    padding-bottom: 10px;
+    min-height: 200px;
+    clear: both;
+}
+
+.dark-gray {
+    background-color: #013440;
+}
+
+#header {
+    background-color: #013440;
+}
+
+
+/* 5. STATE RULES */
+
+a.active {
+    opacity: 0.3%;
+}
+
+/* 6. MEDIA QUERIES */
 
 @media only screen and (max-width: 1024px) {
     #lets-connect {
