@@ -18,25 +18,25 @@ var work = {
   ]
 };
 
- var portfolio = {
+ var projects = {
    "projects": [
      {
       "title": "Random1",
       "dates": "2015",
       "description": "Description for my project.",
-      "image": ["img/portfolio1_full.jpg", "img/portfolio1_thumb.jpg"]
+      "images": ["img/portfolio1_full.jpg", "img/portfolio1_thumb.jpg"]
     },
     {
       "title": "Random2",
       "dates": "2014",
       "description": "Description for my project.",
-      "image": ["img/portfolio2_full.jpg", "img/portfolio2_thumb.jpg"]
+      "images": ["img/portfolio2_full.jpg", "img/portfolio2_thumb.jpg"]
     },
     {
       "title": "Random3",
       "dates": "2013",
       "description": "Description for my project.",
-      "image": ["img/portfolio3_full.jpg", "img/portfolio3_thumb.jpg"]
+      "images": ["img/portfolio3_full.jpg", "img/portfolio3_thumb.jpg"]
     }
   ]
 };
@@ -153,22 +153,22 @@ work.display = function(){
   }
 };
 
-portfolio.display = function(){
+projects.display = function(){
   $("#projects").append(HTMLimageViewerStart);
   $("#photo-viewer").after(HTMLimageViewerContainer);
 /* photoviewer inserted here. Adapted from book "JavaScript & jQuery" by Jon Duckett */
-    for(project in portfolio.projects){
-    var obj = portfolio.projects;
+    for(project in projects.projects){
+    var obj = projects.projects;
     if (obj.hasOwnProperty(project)) {
-            var myProject = HTMLimageLink.replace("%data%", obj[project].image[0]);
+            var myProject = HTMLimageLink.replace("%data%", obj[project].images[0]);
                 myProject += HTMLimageTitle.replace("%data%", obj[project].title);
-                myProject += HTMLimageThumb.replace("%data%", obj[project].image[1]);
+                myProject += HTMLimageThumb.replace("%data%", obj[project].images[1]);
                 myProject += HTMLimageThumbAlt.replace("%data%", obj[project].title);
             $("#thumbnails").prepend(myProject);
     }
   }
-    for(project in portfolio.projects){
-    var obj = portfolio.projects;
+    for(project in projects.projects){
+    var obj = projects.projects;
     if (obj.hasOwnProperty(project)) {
           $("#projects").append(HTMLprojectStart);
           var myProject = HTMLprojectTitle.replace("%data%", obj[project].title);
@@ -181,7 +181,7 @@ portfolio.display = function(){
 
 
 work.display();
-portfolio.display();
+projects.display();
 education.display();
 bio.display();
 
