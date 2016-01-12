@@ -10,9 +10,15 @@ TABLE OF CONTENTS
 
 */
 
+
 /* 1. BASE RULES */
 
-body,
+body {
+    padding: 0;
+    margin: 0;
+    font: 300 16px/22px 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 div,
 ul,
 li,
@@ -25,7 +31,7 @@ h5,
 h6 {
     padding: 0;
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -40,11 +46,10 @@ h2 {
     font-size: 24px;
     color: #999;
     line-height: 29px;
-    padding: 10px;
+    margin-bottom: 12px;
 }
 
 h3 {
-    font-style: italic;
     font-size: 20px;
     color: #000;
     line-height: 22px;
@@ -81,6 +86,16 @@ span {
     overflow: auto;
 }
 
+h1 {
+    font-size: 48px;
+    font-weight: 100;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+
 /* 2. LAYOUT RULES */
 
 .flex-box {
@@ -101,7 +116,13 @@ span {
     padding: 10px;
 }
 
+.section {
+    padding: 30px;
+}
+
+
 /* 3. MODULE RULES */
+
 
 /* Photo viewer styles - adapted from book "JavaScript & jQuery" by Jon Duckett */
 
@@ -162,14 +183,17 @@ span {
 }
 
 #skills-h3 {
-    color: #d97925;
     display: none;
 }
 
 .biopic {
     float: left;
     padding: 10px;
-    width: 200px;
+    max-width: 100%;
+    border-radius: 50%;
+    height: 145px;
+    margin: 50px 0 0;
+    vertical-align: top;
     display: none;
 }
 
@@ -177,35 +201,54 @@ span {
     text-align: center;
 }
 
+
 /* 4. THEME RULES */
 
 .center-content {
     padding: 2.5% 5%;
 }
 
-.orange-text {
-    color: #d97925;
+.blue-text {
+    font-size: 0.875em;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #0b3f57;
+}
+
+.gradient-bg {
+    background: linear-gradient(to right, #627186, #fbcaa1);
 }
 
 .white-text {
-    font-weight: bold;
     color: #fff;
 }
 
 .gray {
     background-color: #f3f3f3;
-    padding-bottom: 10px;
     min-height: 200px;
     clear: both;
 }
 
 .dark-gray {
-    background-color: #013440;
+    background-color: #1f1f1f;
 }
 
-#header {
-    background-color: #013440;
+.header {
+    background: linear-gradient(to right, #627186, #fbcaa1);
+    border-bottom: 5px solid #0b3f57;
 }
+
+.name {
+    font-size: 44px;
+    color: #fff;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 13px;
+}
+
 
 /* 5. STATE RULES */
 
@@ -213,32 +256,34 @@ a.active {
     opacity: 0.3%;
 }
 
+
 /* 6. MEDIA QUERIES */
 
 @media only screen and (max-width: 1024px) {
     #lets-connect {
         margin-top: 5%;
-    };
+    }
+    ;
 }
 
 @media only screen and (max-width:900px) {
     .biopic {
         width: 175px;
-    };
+    }
+    ;
 }
 
 @media only screen and (max-width: 750px) {
     #lets-connect {
         margin-top: 10%;
     }
-
     .biopic {
         width: 150px;
     }
-
     .welcome-message {
         display: none;
-    };
+    }
+    ;
 }
 
 #map {
@@ -255,7 +300,8 @@ a.active {
 
 @media only screen and (min-width: 750px) {
     #skills-h3,
-  .biopic {
+    .biopic {
         display: block;
-    };
+    }
+    ;
 }
