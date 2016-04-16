@@ -1,35 +1,31 @@
-## /* Photoviewer adapted from book "JavaScript & jQuery" by Jon Duckett */
+#Udacity P2: Interactive Resume (29 HOURS)
+[Front End Web Developer Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
 
+Project Directions: You will develop an interactive resume application that reads your resume content from a JSON file and dynamically displays that content within a provided template. You will use objects, functions, conditionals, and control structures to compose and control structures to compose the content that will display on the resume.
 
-## How do I complete this project?
+Usage
+-----
+1. Clone this repository
+2. Navigate to your local copy of index.html through your web browser 
 
-1. Go to the [Javascript Basics course](https://www.udacity.com/course/ud804) and select "View Course Materials."
-2. Go through the videos and assignments in this course to learn the JavaScript necessary to build your resume.
-3. Review your work against the Project Rubric (on the next page).
-4. When you are satisfied with your project, submit it according to the Submission Instructions on the next page.
+**OR**
 
-### By the end:
-Your resume will look something like this
-![](http://i.imgur.com/pWU1Xbl.png)
+Navigate to page hosted on github.com [here](http://klammertime.github.io/frontend-nanodegree-resume/)
 
-And your repository will include the following files:
+## Resources & Future Improvements: 
+* I added a photoviewer adapted from book "JavaScript & jQuery" by Jon Duckett.
+* Udacity Supporting Courses: [JavaScript Basics](https://www.udacity.com/course/javascript-basics--ud804), [Intro to jQuery](https://www.udacity.com/course/intro-to-jquery--ud245)
+* During this project I thought that this approach felt like it could be improved, so I looked into jQuery templates, Mustache.js and Handlebars. A future improvement would be to use Handlebars and Bootstrap. Here are some good resources:
 
-* **index.html**: The main HTML document. Contains links to all of the CSS and JS resources needed to render the resume, including resumeBuilder.js.
-* **js/helper.js**: Contains helper code needed to format the resume and build the map. It also has a few function shells for additional functionality. More on helper.js further down.
-* **js/resumeBuilder.js**: This file is empty. You should write your code here.
-* **js/jQuery.js**: The jQuery library.
-* **css/style.css**: Contains all of the CSS needed to style the page.
-* **README.md**:
-The GitHub readme file.
-* and some images in the images directory.
+* Pluralsight - JavaScript Templating with Handlebars](https://app.pluralsight.com/library/courses/handlebars-javascript-templating/table-of-contents)
+* [Pluralsight - Extending Bootstrap with CSS, JavaScript, and jQuery](https://app.pluralsight.com/library/courses/extending-bootstrap-css-javascript-jquery/table-of-contents)
 
-## Your starting point...
+## Udacity Project Requirements
 ### js/helper.js
 Within helper.js, you’ll find a large collection of strings containing snippets of HTML. Within many snippets, you’ll find placeholder data in the form of `%data%` or `%contact%`.
 
 Each string has a title that describes how it should be used. For instance, `HTMLworkStart` should be the first `<div>` in the Work section of the resume. `HTMLschoolLocation` contains a `%data%` placeholder which should be replaced with the location of one of your schools.
 
-### Your process:
 The resume has four distinct sections: work, education, projects and a header with biographical information. You’ll need to:
 
 1. Build four JSON objects, each one representing a different resume section. The objects that you create need to follow the schema below exactly. Property names are case-sensitive. Make sure your JSON objects are formatted correctly using <a href="http://jsonlint.com/" target="_blank">JSONlint.com</a>.
@@ -91,11 +87,5 @@ The resume has four distinct sections: work, education, projects and a header wi
 * Here’s an example of some code that would add the location of one your companies to the page:
    * `var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);`
    * `$(".work-entry:last").append(formattedLocation);`
- * Use the mockup at the page of this document as a guide for the order in which you should append elements to the page.
-3. The resume includes an interactive map. Do the following to add it.
- * In resumeBuilder.js, append the googleMap string to `<div id=”mapDiv”>`.
- * In index.html, uncomment the Google script element: `<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>`
- * In helper.js, at the bottom of the file, uncomment code to initialize map and set fitBounds.
-4. All of your code for adding elements to the resume should be within functions. And all of your functions should be encapsulated within the same objects containing your resume data. For instance, your functions for appending work experience elements to the page should be found within the same object containing data about your work experience.
-5. Your resume should also `console.log()` information about click locations. On line 90 in helper.js, you’ll find a jQuery onclick handler that you’ll need to modify to work with the `logClicks(x,y)` function above it.
-6. It’s possible to make additional information show up when you click on the pins in the map. Check out line 174 in helper.js and the Google Maps API to get started.
+3. All of your code for adding elements to the resume should be within functions. And all of your functions should be encapsulated within the same objects containing your resume data. For instance, your functions for appending work experience elements to the page should be found within the same object containing data about your work experience.
+
