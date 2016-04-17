@@ -6,7 +6,7 @@
 
 Usage
 -----
-Navigate to project hosted on github.com [**here**](http://klammertime.github.io/frontend-nanodegree-resume/)
+Navigate to project hosted on github.com [**here**](http://klammertime.github.io/P2-Interactive-Resume/)
 
 **OR**
 
