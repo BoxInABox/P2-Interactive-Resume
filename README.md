@@ -1,4 +1,4 @@
-#Udacity P2: Interactive Resume (29 HOURS)
+#Udacity P2: Interactive Resume (29 hrs)
 [Front End Web Developer Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
 
 Project Directions: You will develop an interactive resume application that reads your resume content from a JSON file and dynamically displays that content within a provided template. You will use objects, functions, conditionals, and control structures to compose and control structures to compose the content that will display on the resume.
@@ -12,13 +12,13 @@ Usage
 
 Navigate to page hosted on github.com [here](http://klammertime.github.io/frontend-nanodegree-resume/)
 
-## Resources & Future Improvements: 
-* I added a photoviewer adapted from book "JavaScript & jQuery" by Jon Duckett.
-* Udacity Supporting Courses: [JavaScript Basics](https://www.udacity.com/course/javascript-basics--ud804), [Intro to jQuery](https://www.udacity.com/course/intro-to-jquery--ud245)
-* During this project I thought that this approach felt like it could be improved, so I looked into jQuery templates, Mustache.js and Handlebars. A future improvement would be to use Handlebars and Bootstrap. Here are some good resources:
+##Technologies Used
 
-* Pluralsight - JavaScript Templating with Handlebars](https://app.pluralsight.com/library/courses/handlebars-javascript-templating/table-of-contents)
-* [Pluralsight - Extending Bootstrap with CSS, JavaScript, and jQuery](https://app.pluralsight.com/library/courses/extending-bootstrap-css-javascript-jquery/table-of-contents)
+
+## Resources & Future Improvements: 
+* Udacity Supporting Courses: [JavaScript Basics](https://www.udacity.com/course/javascript-basics--ud804), [Intro to jQuery](https://www.udacity.com/course/intro-to-jquery--ud245)
+* I added a photoviewer adapted from book "JavaScript & jQuery" by Jon Duckett.
+* I looked into Javascript Templates ([Lynda.com - jQuery templates, Mustache.js and Handlebars](http://www.lynda.com/Web-Interaction-Design-tutorials/Welcome/156166/171019-4.html?)) and in the future I'd like to use Handlebars and Bootstrap for projects like this. Here are some good resources: [JavaScript Templating with Handlebars](https://app.pluralsight.com/library/courses/handlebars-javascript-templating/table-of-contents) & [Extending Bootstrap with CSS, JavaScript, and jQuery](https://app.pluralsight.com/library/courses/extending-bootstrap-css-javascript-jquery/table-of-contents)
 
 ## Udacity Project Requirements
 ### js/helper.js
