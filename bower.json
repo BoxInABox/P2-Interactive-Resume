@@ -1,0 +1,20 @@
+{
+  "name": "frontend-nanodegree-resume",
+  "description": "Udacity P2 - Interactive Resume",
+  "main": "index.js",
+  "authors": [
+    "“Klammertime” <audrey.ck@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Klammertime/frontend-nanodegree-resume",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
