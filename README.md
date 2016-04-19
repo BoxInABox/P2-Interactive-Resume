@@ -1,4 +1,6 @@
-#P2: Interactive Resume (29 hrs)
+#Interactive Resume
+
+**Project 2:  Interactive Resume (29 hrs)** ~ [Udacity Front End Web Developer Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
 
 **Project 2**: [Udacity Front End Web Developer Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
 
