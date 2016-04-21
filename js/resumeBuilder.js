@@ -1,4 +1,5 @@
-var work = {
+!function(){
+    var work = {
     "jobs": [{
         "employer": "Employer",
         "title": "Front-end Developer",
@@ -169,12 +170,10 @@ projects.display = function() {
     }
 };
 
-
 work.display();
 projects.display();
 education.display();
 bio.display();
 
 $("#mapDiv").append(googleMap);
-
-// $("#main").append(internationalizeButton);
+}();

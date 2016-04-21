@@ -13,7 +13,6 @@ Navigate to project hosted on github.com [**here**](http://klammertime.github.io
 1. Clone this repository
 2. Navigate to your local copy of index.html through your web browser 
 
-
 ##Technologies Used
 
 JavaScript, jQuery, JSON, Flexbox, responsive images, Gulp, Unsplash images and HTML5.
