@@ -1,6 +1,6 @@
 #Interactive Resume
 
-**Project 2:  Interactive Resume (29 hrs)** ~ [Udacity Front End Web Developer Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
+**Project 2: Interactive Resume (59 hrs)** ~ [Udacity Front End Web Developer Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
 
 **Directions**: You will develop an interactive resume application that reads your resume content from a JSON file and dynamically displays that content within a provided template. You will use objects, functions, conditionals, and control structures to compose and control structures to compose the content that will display on the resume.
 
