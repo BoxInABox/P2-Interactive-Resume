@@ -18,7 +18,7 @@ JavaScript, jQuery, JSON, Google Maps API, Flexbox, responsive images, Gulp, Uns
 [Udacity Front-End Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/)
 
 ##Challenges
-I misunderstood the directions and thought I was supposed to recreate [**this**](https://camo.githubusercontent.com/f4c154444bc91d29cab9f120a480277f673015f5/687474703a2f2f692e696d6775722e636f6d2f7057553158626c2e706e67) provided layout exactly, which I did. However, we were actually allowed to change the layout quite a bit and I see that Udacity added a new video to clear up this confusion. I will go back and customize it, prioritizing responsiveness, the header/footer areas and possibly use Polymer. But due to time constraints and the fact this resume met specifications and was approved, I chose to move on to the next project and come back later.
+I misunderstood the directions and thought I was supposed to recreate [**this**](https://camo.githubusercontent.com/f4c154444bc91d29cab9f120a480277f673015f5/687474703a2f2f692e696d6775722e636f6d2f7057553158626c2e706e67) provided layout exactly, which I did. However, we were actually allowed to change the layout quite a bit and I see that Udacity added a new video to clear up this confusion. I will go back and customize it, prioritizing responsiveness and the header/footer areas. Also, this is the perfect opportunity to try out Polymer. But due to time constraints and the fact this resume met specifications and was approved, I chose to move on to the next project and come back later.
 
 ## Resources & Future Improvements: 
 * **Udacity Supporting Courses**: [JavaScript Basics](https://www.udacity.com/course/javascript-basics--ud804), [Intro to jQuery](https://www.udacity.com/course/intro-to-jquery--ud245)
