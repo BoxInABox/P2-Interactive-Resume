@@ -4,7 +4,7 @@
 
 I developed an interactive resume application that reads resume content from a JSON file and dynamically displays that content within a provided template. I used objects, functions, conditionals, and control structures to compose the content displayed on the resume. I recreated [the provided resume layout](https://camo.githubusercontent.com/f4c154444bc91d29cab9f120a480277f673015f5/687474703a2f2f692e696d6775722e636f6d2f7057553158626c2e706e67) exactly then I customized the portfolio section using jQuery to create a photoviewer. I personalized the layout slightly (see **Challenges** section below on why I did not do more). 
 
-###[**~VIEW INTERACTIVE RESUME ONLINE HERE~**](http://klammertime.github.io/P2-Interactive-Resume/)
+###[**~VIEW RESUME ONLINE HERE~**](http://klammertime.github.io/P2-Interactive-Resume/)
 
 Usage
 -----
