@@ -2,20 +2,23 @@
 
 **Project 2: Interactive Resume (59 hrs)** ~ [Udacity Front End Web Developer Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
 
-**Directions**: You will develop an interactive resume application that reads your resume content from a JSON file and dynamically displays that content within a provided template. You will use objects, functions, conditionals, and control structures to compose and control structures to compose the content that will display on the resume.
+I developed an interactive resume application that reads resume content from a JSON file and dynamically displays that content within a provided template. I used objects, functions, conditionals, and control structures to compose the content that will display on the resume. I recreated [the provided resume layout](https://camo.githubusercontent.com/f4c154444bc91d29cab9f120a480277f673015f5/687474703a2f2f692e696d6775722e636f6d2f7057553158626c2e706e67) then customized it to personalize it. 
+
+###[**~VIEW INTERACTIVE RESUME ONLINE HERE~**](http://klammertime.github.io/P2-Interactive-Resume/)
 
 Usage
 -----
-Navigate to project hosted on github.com [**here**](http://klammertime.github.io/P2-Interactive-Resume/)
-
-**OR**
-
 1. Clone this repository
 2. Navigate to your local copy of index.html through your web browser 
 
 ##Technologies Used
+JavaScript, jQuery, JSON, Google Maps API, Flexbox, responsive images, Gulp, Unsplash images and HTML5.
 
-JavaScript, jQuery, JSON, Flexbox, responsive images, Gulp, Unsplash images and HTML5.
+##Style Guide Used
+[Udacity Front-End Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/)
+
+##Challenges
+I misunderstood the directions and thought I was supposed to recreate the provided layout exactly, which I did. However, we were actually allowed to change the layout quite a bit (just not the code), which I would have done using Bootstrap to save time. I will go back and customize it a lot, but due to time constraints, I needed to move on to the next project. 
 
 ## Resources & Future Improvements: 
 * **Udacity Supporting Courses**: [JavaScript Basics](https://www.udacity.com/course/javascript-basics--ud804), [Intro to jQuery](https://www.udacity.com/course/intro-to-jquery--ud245)
