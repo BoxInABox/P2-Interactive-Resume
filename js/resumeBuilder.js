@@ -1,4 +1,4 @@
-!function() {
+(function() {
     var work,
         projects,
         education,
@@ -86,24 +86,25 @@
             myContact,
             picWelcome,
             mySkill = "";
-        nameTitle = HTMLheaderName.replace("%data%", bio.name) +
-            HTMLheaderRole.replace("%data%", bio.role);
-        $("#header").prepend(nameTitle);
-        obj = bio.contacts;
-        myContact = HTMLmobile.replace("%data%", obj.mobile);
-        myContact += HTMLemail.replace("%data%", obj.email);
-        myContact += HTMLtwitter.replace("%data%", obj.twitter);
-        myContact += HTMLgithub.replace("%data%", obj.github);
-        myContact += HTMLlocation.replace("%data%", obj.location);
-        $("#topContacts").append(myContact);
-        $("#footerContacts").append(myContact);
-        picWelcome = HTMLbioPic.replace("%data%", bio.biopic) +
-            HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-        $("#header").append(picWelcome);
 
-        if (bio.skills.length > 0) {
+            nameTitle = HTMLheaderName.replace("%data%", this.name);
+            $("#header").prepend(nameTitle);
+            obj = this.contacts;
+            myContact = HTMLmobile.replace("%data%", obj.mobile);
+            myContact += HTMLemail.replace("%data%", obj.email);
+            myContact += HTMLtwitter.replace("%data%", obj.twitter);
+            myContact += HTMLgithub.replace("%data%", obj.github);
+            myContact += HTMLlocation.replace("%data%", obj.location);
+            $("#topContacts").append(myContact);
+            $("#footerContacts").append(myContact);
+            picWelcome = HTMLbioPic.replace("%data%", this.biopic) +
+
+            HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
+            $("#header").append(picWelcome);
+
+        if (this.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
-            bio.skills.forEach(function(val, ind, arr) {
+            this.skills.forEach(function(val, ind, arr) {
                 mySkill += HTMLskills.replace("%data%", val);
             });
             $("#skills").append(mySkill);
@@ -174,4 +175,4 @@
     bio.display();
 
     $("#mapDiv").append(googleMap);
-}();
+}());
